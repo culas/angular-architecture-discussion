@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>Discussion Circle: Angular Architecture</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/Zuehlke/zuehlke-reveal-package@f3c1813273ab1097d248719a1b09a86eb6c41c4e/release/index.css">
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section class="title-slide">
+                <h1>Discussion Circle: Angular Architecture</h1>
+                <h2>Webplatform Topic Team @ Zühlke Day October 2022</h2>
+                <h3>Aspects of developing enterprise applications with Angular</h3>
+            </section>
+
+            <section class="agenda">
+                <h2>Goal</h2>
+                <p>Get a snapshot of current good practices from different Angular projects across Zühlke</p>
+            </section>
+
+            <section class="agenda">
+                <h2>Format</h2>
+                <ul>
+                    <li>moderated discussion</li>
+                    <li>intro and starting questions for each topic</li>
+                    <li>each question gets as much time as reasonable</li>
+                    <li>everyone is invited to contribute</li>
+                </ul>
+            </section>
+
+            <section class="agenda">
+                <h2>Topics</h2>
+                <div class="wrapper">
+                    <div>
+                        <span class="number">01</span>
+                        <span class="title">Modularisation</span>
+                    </div>
+                    <div>
+                        <span class="number">02</span>
+                        <span class="title">Structure</span>
+                    </div>
+                    <div>
+                        <span class="number">03</span>
+                        <span class="title">Testing</span>
+                    </div>
+                    <div>
+                        <span class="number">04</span>
+                        <span class="title">Tooling</span>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <section class="subtitle-slide">
+                    <h2>Modularisation</h2>
+                </section>
+
+                <section>
+                    <h2>Modularisation</h2>
+                    <p>Each Angular components has to be part of a module (we'll ignore the new standalone components
+                        for today).</p>
+                    <p>The scale goes from a single module for the entire project to «SCAM» (single component Angular
+                        modules).</p>
+                    <p>Modules are essential for code splitting as they can be lazy-loaded.</p>
+                </section>
+
+                <section>
+                    <h2>Angular Module Categories</h2>
+                    <ul>
+                        <li><b>Domain:</b> organised around a feature</li>
+                        <li><b>Routed:</b> destination of a route</li>
+                        <li><b>Routing:</b> routing configuration for other modules</li>
+                        <li><b>Service:</b> utility services</li>
+                        <li><b>Widget:</b> collection of reusable parts (3rd party libs)</li>
+                        <li><b>Shared:</b> commonly used parts across the app</li>
+                    </ul>
+                </section>
+
+                <section class="statement-slide">
+                    <h2>How do you divide your application into different Angular modules?</h2>
+                </section>
+
+                <section>
+                    <h2>How do you divide your application into different Angular modules?</h2>
+                    <ul>
+                        <li class="fragment">do you know/use «SCAM»?</li>
+                        <li class="fragment">how do you enforce the structure?</li>
+                        <li class="fragment">how do you handle shared logic/functionality?</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section class="subtitle-slide">
+                    <h2>Structure</h2>
+                </section>
+
+                <section>
+                    <h2>Structure</h2>
+                    <p>Besides <b>components</b>, Angular has <b>directives</b> and the concept of (singleton)
+                        <b>services</b> that can be injected.
+                    </p>
+                    <p>But you can also import functions from JS modules.</p>
+                    <p>More complex applications might even need some sort of state managment library.</p>
+                </section>
+
+                <section class="statement-slide">
+                    <h2>Where is your business logic?</h2>
+                    <h2>How is your code structured?</h2>
+                </section>
+
+                <section>
+                    <h2>How is your code structured?</h2>
+                    <ul>
+                        <li class="fragment">Do you differentiate types of components? (smart vs. dumb)</li>
+                        <li class="fragment">Where is the state kept?</li>
+                        <li class="fragment">How does the data flow look like?</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section>
+                <section class="subtitle-slide">
+                    <h2>Testing</h2>
+                </section>
+
+                <section>
+                    <h2>Testing</h2>
+                    <p>Angular comes with a TestBed to setup the unit under test and interact with the template.</p>
+                    <p>Alternatively you can just test the component class without the DOM.</p>
+                    <p>E2E tests usually complement the setup to varying degrees.</p>
+                </section>
+
+                <section class="statement-slide">
+                    <h2>How do you test your Angular application?</h2>
+                </section>
+
+                <section>
+                    <h2>How do you test your Angular application?</h2>
+                    <ul>
+                        <li class="fragment">Do you use the TestBed?</li>
+                        <li class="fragment">Do you use other testing libraries?</li>
+                        <li class="fragment">Is the template part of unit tests or e2e tests?</li>
+                        <li class="fragment">Mocking or injecting services? Are there integration tests?</li>
+                    </ul>
+                </section>
+            </section>
+        </div>
+    </div>
+
+    <script
+        src="https://cdn.jsdelivr.net/gh/Zuehlke/zuehlke-reveal-package@f3c1813273ab1097d248719a1b09a86eb6c41c4e/release/index.js"></script>
+    <script>
+        setupZuehlkeRevealPresentation();
+    </script>
+</body>
+
+</html>
