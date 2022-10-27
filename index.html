@@ -84,11 +84,11 @@
 
                 <section>
                     <h2>Modularisation</h2>
-                    <p>Each Angular components has to be part of a module (we'll ignore the new standalone components
-                        for today).</p>
-                    <p>The scale goes from a single module for the entire project to «SCAM» (single component Angular
-                        modules).</p>
+                    <p>Each Angular components has to be part of a module*.</p>
+                    <p>The scale goes from one module for the entire project to «SCAM» (single component Angular modules).</p>
                     <p>Modules are essential for code splitting as they can be lazy-loaded.</p>
+                    <p style="font-size: .5em; margin-top: 3em">* we'll ignore the new standalone components for today
+                    </p>
                 </section>
 
                 <section>
@@ -110,9 +110,10 @@
                 <section>
                     <h2>How do you divide your application into different Angular modules?</h2>
                     <ul>
-                        <li class="fragment">do you know/use «SCAM»?</li>
-                        <li class="fragment">how do you enforce the structure?</li>
-                        <li class="fragment">how do you handle shared logic/functionality?</li>
+                        <li class="fragment">Do you know/use «SCAM»?</li>
+                        <li class="fragment">How do you enforce the structure?</li>
+                        <li class="fragment">How do you handle shared logic/functionality?</li>
+                        <li class="fragment">Are you using lazy-loading? why?</li>
                     </ul>
                 </section>
             </section>
@@ -124,24 +125,26 @@
 
                 <section>
                     <h2>Structure</h2>
-                    <p>Besides <b>components</b>, Angular has <b>directives</b> and the concept of (singleton)
-                        <b>services</b> that can be injected.
+                    <p>Besides <b class="hl">components</b>, Angular has <b class="hl">directives</b> and the concept of
+                        (singleton)
+                        <b class="hl">services</b> that can be injected.
                     </p>
                     <p>But you can also import functions from JS modules.</p>
-                    <p>More complex applications might even need some sort of state managment library.</p>
+                    <p>More complex applications might need a state managment library.</p>
                 </section>
 
                 <section class="statement-slide">
-                    <h2>Where is your business logic?</h2>
                     <h2>How is your code structured?</h2>
                 </section>
 
                 <section>
                     <h2>How is your code structured?</h2>
                     <ul>
-                        <li class="fragment">Do you differentiate types of components? (smart vs. dumb)</li>
+                        <li class="fragment">Do you differentiate types of components? (smart vs. dumb, atomic design)
+                        </li>
                         <li class="fragment">Where is the state kept?</li>
                         <li class="fragment">How does the data flow look like?</li>
+                        <li class="fragment">Where is the domain? Are you using domain objects?</li>
                     </ul>
                 </section>
             </section>
@@ -153,8 +156,8 @@
 
                 <section>
                     <h2>Testing</h2>
-                    <p>Angular comes with a TestBed to setup the unit under test and interact with the template.</p>
-                    <p>Alternatively you can just test the component class without the DOM.</p>
+                    <p>Angular comes with a <b class="hl">TesteBed</b> to setup the unit under test and interact with the template.</p>
+                    <p>Alternatively you can just test the component class without DOM.</p>
                     <p>E2E tests usually complement the setup to varying degrees.</p>
                 </section>
 
